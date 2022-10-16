@@ -1,0 +1,58 @@
+ssh -i "C:\Users\nimmy\Putty\bhp.pem" ubuntu@ec2-35-78-109-7.ap-northeast-1.compute.amazonaws.com
+pwd
+ls /etc/init.d
+go to winscp, and copy code there
+pwd
+ls
+sudo apt-get update
+sudo apt-get install nginx
+sudo service nginx status
+:q
+check the ip working or not.. it would be working
+cd /etc/nginx/
+pwd
+ll
+cd sites-enabled/
+ls
+ll
+sudo unlink default    // remove the deault file- because it contains the content in the html file, which loaded in ip address
+ll
+cd ../sites-available
+sudo vim bhp.conf
+server {
+    listen 80;
+        server_name bhp;
+        root /home/ubuntu/model/UI;
+        index app.html;
+        location /api/ {
+             rewrite ^/api(.*) $1 break;
+             proxy_pass http://127.0.0.1:5000;
+        }
+}
+:wq
+ll
+cd ../sites-enabled/
+sudo ln -v -s /etc/nginx/sites-available/bhp.conf inside /etc/nginx/sites-enabled
+ll
+sudo service nginx restart
+-- error{ Job for nginx.service failed because the control process exited with error code. See "systemctl status nginx.service" and "journalctl -xe" for details.}
+sudo unlink inside
+sudo unlink bhp.conf
+sudo ln -s /etc/nginx/sites-available/bhp.conf /etc/nginx/sites-enabled/bhp.conf
+sudo service nginx restart
+sudo service nginx status
+cd ~
+cd model/server
+ls
+python3 -- installed
+ctrl+z
+pip3 -- not installed
+sudo apt install python3-pip
+sudo pip3 install Flask==2.0.1
+sudo pip3 install Flask
+sudo pip3 install numpy
+sudo pip3 install scikit-learn
+
+/home/ubuntu/-- change location in util
+
+python3 server.py
