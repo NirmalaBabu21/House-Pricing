@@ -14,4 +14,5 @@ Steps to follow:
 11. Try to exceute in AWS EC2 
 12. The below site is my EC2 instance :http://ec2-35-78-109-7.ap-northeast-1.compute.amazonaws.com/
 
-![image](https://user-images.githubusercontent.com/103834688/196054822-6aa9d41e-a24c-45ea-a635-4bf9fc9d5fe3.png)
+![image](https://user-images.githubusercontent.com/103834688/196055473-671bba06-90ee-4b89-bc76-460b4afd036f.png)
+
